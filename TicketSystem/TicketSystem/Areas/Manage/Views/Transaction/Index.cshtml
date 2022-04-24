@@ -1,0 +1,42 @@
+﻿@model List<Transaction>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+    int order = 1;
+}
+
+<div class="container-fluid">
+    <h1>Reservations</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr style="align-items:center">
+                <th scope="col">#</th>
+                <th scope="col">User Id</th>
+                <th scope="col">Reservation Id</th>
+                <th scope="col">Card Holder Name</th>
+                <th scope="col">Card Number</th>
+                <th scope="col">Card Expiration Date</th>
+                <th scope="col">CVV/CVC</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr style="align-items:center">
+                    <th scope="row">@order</th>
+                    <td>@item.appUser.Id</td>
+                    <td>@item.ReservationId</td>
+                    <td>@item.CustomerName</td>
+                    <td>@item.Number</td>
+                    <td>@item.ExpirationTime</td>
+                    <td>@item.CVV</td>
+                </tr>
+
+                order++;
+            }
+
+        </tbody>
+    </table>
+</div>
+

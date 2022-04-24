@@ -1,0 +1,132 @@
+﻿@model MyReservationViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="~/assets/css/ticket.css" />
+    <title>Document</title>
+</head>
+
+</html>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                <div class="container-fluid">
+                    <div>
+                       <a asp-action="index" asp-controller="home" class="navbar-brand"><img src="~/assets/photos/icons8-train-64.png" alt="" /></a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="flex-grow: 0">
+                       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" asp-action="index" asp-controller="home">HOME</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" asp-action="index" asp-controller="ticket">TICKETS</a>
+                            </li>
+                            @if (User.IsInRole("Member"))
+                            {                                
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" asp-action="Edit" asp-controller="Account">@User.Identity.Name.ToUpper()</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" asp-action="MyReservation" asp-controller="Account">RESERVATIONS</a>
+                                </li>
+                            }else
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" asp-action="Login" asp-controller="Account">LOGIN</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" asp-action="Register" asp-controller="Account">REGISTRATION</a>
+                                </li>      
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="limiter">
+        <div class="container-table100">
+            <div class="wrap-table100">
+                <div class="table100 ver1 m-b-110">
+                    <div class="table100-head">
+                        <table>
+                            <thead>
+                                <tr class="row100 head">
+                                    <th class="cell100 column1">Train number</th>
+                                    <th class="cell100 column3">Departure time</th>
+                                    <th class="cell100 column2">Arriving time</th>
+                                    <th class="cell100 column4">Destinations</th>
+                                    <th class="cell100 column5">Price</th>
+                                    <th class="cell100 column6">Ticket number</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <div class="table100-body js-pscroll ps ps--active-y">
+                        <table>
+                            <tbody>
+                                @foreach(var item in Model.tickets)
+                                {                                    
+                                    <tr class="row100 body">
+                                        <td class="cell100 column1">@item.TrainNumber</td>
+                                        <td class="cell100 column2">@item.DepartureTime.ToString("MM/dd/yyy hh:mm")</td>
+                                        <td class="cell100 column3">@item.ArrivingTime.ToString("MM/dd/yyy hh:mm")</td>
+                                        <td class="cell100 column4">@item.From - @item.To Chapman</td>
+                                        <td class="cell100 column5">@item.Price</td>
+                                        <td class="cell100 column6">@item.TicketNumber</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="lastpart text-center">
+            <p id="social">Our Social Media Accounts</p>
+
+            <div class="lastparticone d-flex justify-content-center g-2">
+                <a href="@Model.settings.Facebook">
+                   <div class="iconess fs-3"><i class="bi bi-facebook"></i></div>
+                </a>
+                <a href="@Model.settings.Twitter">
+                   <div class="iconess fs-3"><i class="bi bi-twitter"></i></div>
+                </a>
+                <a href = "@Model.settings.Instagram">
+
+                <div class="iconess fs-3"><i class="bi bi-instagram"></i></div>
+                </a>
+                <a href = "@Model.settings.Linkedin">
+
+                <div class="iconess fs-3"><i class="bi bi-linkedin"></i></div>
+                </a>
+            </div>
+            <hr />
+            <div class="finally">
+                <p id="c2022">c 2022 Azerbaijan railways</p>
+            </div>
+        </div>
+    </footer>
+</body>

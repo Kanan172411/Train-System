@@ -1,0 +1,265 @@
+.uc_text {
+  margin-top: 75px;
+  padding-bottom: 40px;
+}
+.uc_text3 {
+  margin-bottom: 75px;
+}
+.hisse6p {
+  padding-bottom: 13px;
+}
+.hisse6icone {
+  color: #9a8067;
+  padding-top: 15px;
+}
+.hisse6 {
+  background-color: whitesmoke;
+  text-align: center;
+}
+.hisse6head {
+  padding-top: 100px;
+  padding-bottom: 40px;
+}
+
+.divv {
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 300px;
+  position: relative;
+  background-size: cover;
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+  opacity: 0.3;
+}
+.overlay2 {
+  position: absolute;
+  color: white;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+.picture6_buton {
+  margin-top: 15px;
+  margin-bottom: 85px;
+}
+.progress {
+  margin-top: 11px;
+}
+p {
+  margin: 0;
+}
+.picture6_header {
+  margin-top: 70px;
+  margin-bottom: 45px;
+}
+.imgler6 {
+  width: 100%;
+}
+#hisse5id {
+  color: midnightblue;
+  border-color: midnightblue;
+}
+#hisse5idd {
+  color: white;
+  background-color: midnightblue;
+}
+
+#hisse5header {
+  background-color: midnightblue;
+}
+.h3 {
+  color: midnightblue;
+}
+.hisse5 {
+  background-color: whitesmoke;
+  text-align: center;
+  padding-bottom: 70px;
+}
+.Part5_header {
+  padding-bottom: 45px;
+  padding-top: 70px;
+}
+.imgler3 {
+  width: 100%;
+  border-radius: 5px;
+}
+.imginclassi {
+  background-color: white;
+  margin-left: 12px;
+  border-bottom-left-radius: 4px;
+  width: 70%;
+  height: 35%;
+}
+.river_header {
+  padding-bottom: 45px;
+  padding-top: 70px;
+}
+.river_buttone {
+  margin-top: 45px;
+  margin-bottom: 75px;
+}
+#hisse7id {
+  color: white;
+  float: left;
+  background-color: midnightblue;
+}
+
+.hisse7 {
+  background-color: whitesmoke;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.bi {
+  width: auto;
+  text-align: center;
+}
+.iconess {
+  width: 50px;
+  height: 50px;
+  background-color: burlywood;
+  border-radius: 50%;
+  margin-right: 25px;
+}
+.lastpart {
+  color: #9a8067;
+}
+#imgg {
+  padding-top: 95px;
+  padding-bottom: 20px;
+}
+.finally {
+  background-color: #9a8067;
+  padding: 15px;
+}
+#c2022 {
+  color: white;
+}
+
+#threekart {
+  margin-bottom: 30px;
+}
+.lastparticone {
+  padding-bottom: 50px;
+}
+
+#social {
+  font-size: 50px;
+}
+.nav-item {
+  font-size: 24px;
+  font-family: math;
+}
+.section {
+  position: relative;
+  height: 100vh;
+}
+.iconess {
+  color: white;
+}
+#time {
+  color: #9a8067;
+}
+
+.section .section-center {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.section {
+  position: relative;
+  height: 100vh;
+}
+#bgimg {
+  background-image: url(./212900-railway.jpg);
+  padding: 50px;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.card {
+  max-width: 500px;
+  margin: auto;
+  color: black;
+  border-radius: 20 px;
+}
+
+p {
+  margin: 0px;
+}
+
+.container .h8 {
+  font-size: 30px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.btn.btn-primary {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  background-image: linear-gradient(
+    to right,
+    #77a1d3 0%,
+    #9a8067 51%,
+    #9a8067 100%
+  );
+  border: none;
+  transition: 0.5s;
+  background-size: 200% auto;
+}
+
+.btn.btn.btn-primary:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn.btn-primary:hover .fas.fa-arrow-right {
+  transform: translate(15px);
+  transition: transform 0.2s ease-in;
+}
+
+.form-control {
+  color: white !important;
+  background-color: #9a8067;
+  border: 2px solid transparent;
+  height: 60px;
+  padding-left: 20px;
+  vertical-align: middle;
+}
+
+.form-control:focus {
+  color: white;
+  background-color: #9a8067;
+  border: 2px solid #9a8067;
+  box-shadow: none;
+}
+
+.text {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+::placeholder {
+  font-size: 14px;
+  font-weight: 600;
+}

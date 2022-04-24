@@ -1,0 +1,38 @@
+﻿@model List<Reservation>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+    int order = 1;
+}
+
+<div class="container-fluid">
+    <h1>Reservations</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr style="align-items:center">
+                <th scope="col">#</th>
+                <th scope="col">Created Time</th>
+                <th scope="col">CustomerId</th>
+                <th scope="col">Customer FullName</th>
+                <th scope="col">Ticket Id</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr style="align-items:center">
+                    <th scope="row">@order</th>
+                    <td>@item.CreatedAt.ToString("MM/dd/yyy hh:mm")</td>
+                    <td>@item.appUser.Id</td>
+                    <td>@item.appUser.FullName</td>
+                    <td>@item.ticket.Id</td>
+                </tr>
+
+                order++;
+            }
+
+        </tbody>
+    </table>
+</div>
+

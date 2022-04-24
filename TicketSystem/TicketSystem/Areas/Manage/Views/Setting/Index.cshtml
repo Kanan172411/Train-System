@@ -1,0 +1,27 @@
+﻿@model Settings
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <h1>Settings</h1>
+    <div class="d-flex" style="margin-bottom:20px">
+        <a class="btn btn-primary" asp-action="edit" asp-route-id="1">Edit</a>
+    </div>
+    <div class="card" style="width: 100rem;">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Address1 :  @("              "+Model.Address1)</li>
+            <li class="list-group-item">Address2 :@("              "+Model.Address2)</li>
+            <li class="list-group-item">PhoneNumber1 :@("         "+Model.PhoneNumber1)</li>
+            <li class="list-group-item">PhoneNumber2 :@("        "+Model.PhoneNumber2)</li>
+            <li class="list-group-item">Email1 :@("                "+Model.Email1)</li>
+            <li class="list-group-item">Email2 :@("                "+Model.Email2)</li>
+            <li class="list-group-item">Facebook :@("    "+Model.Facebook)</li>
+            <li class="list-group-item">Twitter :@("  "+Model.Twitter)</li>
+            <li class="list-group-item">Instagram :@("    "+Model.Instagram)</li>
+            <li class="list-group-item">Linkedin :@("     "+Model.Linkedin)</li>
+        </ul>
+    </div>
+</div>
+

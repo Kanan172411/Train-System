@@ -1,0 +1,73 @@
+﻿@model Settings
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <h1>Edit</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="Address1">Address1</label>
+            <input type="text" asp-for="Address1" class="form-control">
+            <span class="text-danger" asp-validation-for="Address1"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Address2">Address2</label>
+            <textarea asp-for="Address2" class="form-control"></textarea>
+            <span class="text-danger" asp-validation-for="Address2"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="PhoneNumber1">PhoneNumber1</label>
+            <textarea asp-for="PhoneNumber1" class="form-control"></textarea>
+            <span class="text-danger" asp-validation-for="PhoneNumber1"></span>
+        </div>        
+        <div class="form-group">
+            <label asp-for="PhoneNumber2">PhoneNumber2</label>
+            <textarea asp-for="PhoneNumber2" class="form-control"></textarea>
+            <span class="text-danger" asp-validation-for="PhoneNumber2"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email1">Email1</label>
+            <textarea asp-for="Email1" class="form-control"></textarea>
+            <span class="text-danger" asp-validation-for="Email1"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email2">Email2</label>
+            <textarea asp-for="Email2" class="form-control"></textarea>
+            <span class="text-danger" asp-validation-for="Email2"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Facebook">Facebook</label>
+            <textarea asp-for="Facebook" class="form-control"></textarea>
+            <span class="text-danger" asp-validation-for="Facebook"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Twitter">Twitter</label>
+            <textarea asp-for="Twitter" class="form-control"></textarea>
+            <span class="text-danger" asp-validation-for="Twitter"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Instagram">Instagram</label>
+            <textarea asp-for="Instagram" class="form-control"></textarea>
+            <span class="text-danger" asp-validation-for="Instagram"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Linkedin">Linkedin</label>
+            <textarea asp-for="Linkedin" class="form-control"></textarea>
+            <span class="text-danger" asp-validation-for="Linkedin"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+

@@ -1,0 +1,125 @@
+﻿@model UserLoginViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="~/assets/css/customer.css" />
+    <title>Document</title>
+</head>
+
+</html>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                <div class="container-fluid">
+                    <div>
+                        <a asp-action="index" asp-controller="home" class="navbar-brand"><img src="~/assets/photos/icons8-train-64.png" alt="" /></a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="flex-grow: 0">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" asp-action="index" asp-controller="home">HOME</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" asp-action="index" asp-controller="ticket">TICKETS</a>
+                            </li>
+                            @if (User.IsInRole("Member"))
+                            {                                
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" asp-action="Edit" asp-controller="Account">@User.Identity.Name.ToUpper()</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" asp-action="MyReservation" asp-controller="Account">RESERVATIONS</a>
+                                </li>
+                            }else
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" asp-action="Login" asp-controller="Account">LOGIN</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" asp-action="Register" asp-controller="Account">REGISTRATION</a>
+                                </li>      
+                            }
+                        </ul>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+    <div id="booking" class="section" style=" background-image: url('/assets/photos/212900-railway.jpg');">
+        <div class="section-center">
+            <div class="container">
+                <div class="row">
+                    <div class="booking-form">
+                        <div class="form-header">
+                            <h1>Sign In</h1>
+                        </div>
+                        <form method="post">
+                            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                            <div class="form-group">
+                                <span class="form-label">UserName</span>
+                                <input asp-for="Username" name="UserName" class="form-control" type="text" placeholder="Enter your User name" />
+                                <span class="text-danger" asp-validation-for="Username"></span>
+                            </div>
+                             
+                            <div class="form-group">
+                                <span class="form-label">Password</span>
+                                <input asp-for="Password" name="Password" class="form-control" type="password" placeholder="Enter password" />
+                                <span class="text-danger" asp-validation-for="Password"></span>
+                            </div>
+                           
+                            <div class="form-btn">
+                                <button type="submit" class="submit-btn">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="lastpart text-center">
+            <p id="social">Our Social Media Accounts</p>
+
+                        <div class="lastparticone d-flex justify-content-center g-2">
+                <a href="@ViewBag.Settings.Facebook">
+                   <div class="iconess fs-3"><i class="bi bi-facebook"></i></div>
+                </a>
+                <a href="@ViewBag.Settings.Twitter">
+                   <div class="iconess fs-3"><i class="bi bi-twitter"></i></div>
+                </a>
+                <a href = "@ViewBag.Settings.Instagram">
+
+                <div class="iconess fs-3"><i class="bi bi-instagram"></i></div>
+                </a>
+                <a href = "@ViewBag.Settings.Linkedin">
+
+                <div class="iconess fs-3"><i class="bi bi-linkedin"></i></div>
+                </a>
+            </div>
+            <hr />
+            <div class="finally">
+                <p id="c2022">c 2022 Azerbaijan railways</p>
+            </div>
+        </div>
+    </footer>
+</body>
